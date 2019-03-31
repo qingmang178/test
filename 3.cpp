@@ -38,7 +38,7 @@ void Call(A *p
 }
 int main() {
 	Call(new A());//A* p  = new A();  p->Fun()调用的自然是A的Fun()。p->Do()调用的自然是A的Do()。
-	Call(new C());
+	Call(new C());//A* p  = new C();  p->Fun()，因为Fun不是虚函数，不会引发多态，调用的依然是A的Fun()。  p->Do()，由于Do是虚函数，引发多态，调用C的Do()。
 	system("pause");
 	return 0;
 }
